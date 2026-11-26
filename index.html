@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Wifeey ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff6fae;
+    --light-pink: #ffe4ef;
+    --purple: #b69cff;
+    --dark: #704b70;
+    --white: #fffafc;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #f3eaff, #ffe4ef);
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: floatHeart 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Login page */
+
+#loginPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    background: rgba(255,255,255,0.88);
+    padding: 35px 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(255,111,174,0.2);
+    border: 2px solid white;
+}
+
+.login-card .big-heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.login-card h1 {
+    color: #ff5d9f;
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.login-card p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#password {
+    width: 100%;
+    padding: 15px;
+    border-radius: 18px;
+    border: 2px solid #ffd0e2;
+    background: #fff7fb;
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+#password:focus {
+    border-color: var(--pink);
+}
+
+.main-btn {
+    background: linear-gradient(135deg, #ff6fae, #c49bff);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 18px;
+    box-shadow: 0 5px 15px rgba(255,111,174,0.25);
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+}
+
+#error {
+    color: #ff4e83;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+/* Main website */
+
+#mainPage {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 35px;
+}
+
+header h1 {
+    font-size: clamp(30px, 7vw, 55px);
+    color: #ff5d9f;
+    text-shadow: 2px 3px 0 white;
+}
+
+header p {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.section {
+    padding: 30px 18px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    color: #c278b7;
+    font-size: clamp(25px, 5vw, 36px);
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+/* Photo gallery */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(190,120,160,0.12);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    background: #ffe8f2;
+}
+
+.photo-card p {
+    padding: 12px 5px 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Video gallery */
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: white;
+    padding: 12px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(190,120,160,0.12);
+}
+
+.video-card video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 450px;
+    object-fit: contain;
+    background: #222;
+    border-radius: 15px;
+    display: block;
+}
+
+.video-card p {
+    text-align: center;
+    padding: 12px 5px 3px;
+    font-size: 13px;
+}
+
+/* Love letters */
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.letter {
+    background: #fffdf5;
+    border: 1px solid #ffe0eb;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(200,140,170,0.12);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.letter h3 {
+    font-family: 'Pacifico', cursive;
+    color: #ff6fae;
+    margin-bottom: 12px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+/* Surprise boxes */
+
+.surprise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+}
+
+.gift {
+    background: white;
+    border-radius: 22px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(200,140,170,0.12);
+    transition: 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.04);
+}
+
+.gift button {
+    background: #ffe4ef;
+    color: #d85a98;
+    border-radius: 15px;
+    padding: 13px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gift p {
+    margin-top: 15px;
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+/* Final message */
+
+.final-card {
+    background: linear-gradient(135deg, #ffb5d4, #d9c4ff);
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    padding: 35px 20px;
+    box-shadow: 0 10px 30px rgba(220,130,180,0.2);
+}
+
+.final-card h2 {
+    color: white;
+}
+
+.final-card p {
+    line-height: 2;
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 13px;
+    color: #b078a2;
+}
+
+#musicBtn {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 10;
+    background: white;
+    color: #ff5d9f;
+    border-radius: 50px;
+    padding: 13px 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    header {
+        padding-top: 35px;
+    }
+
+    .section {
+        padding: 25px 12px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .photo-card img {
+        height: 210px;
+    }
+
+    .video-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card video {
+        max-height: 500px;
+    }
+
+    .login-card {
+        padding: 30px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div id="hearts"></div>
+
+<!-- Birthday password screen -->
+<section id="loginPage">
+
+    <div class="login-card">
+
+        <div class="big-heart">💗</div>
+
+        <h1>For My Wifeey</h1>
+
+        <p>
+            A little surprise made with lots of love.<br>
+            Only my special girl can open it. 🎀<br><br>
+            Enter your Nepali birthday to unlock your gift.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="MM/DD"
+            maxlength="5"
+            autocomplete="off"
+        >
+
+        <br>
+
+        <button class="main-btn" onclick="unlockWebsite()">
+            Unlock My Love 💌
+        </button>
+
+        <p id="error"></p>
+
+        <p style="font-size:12px; color:#b58ba8;">
+            Hint: Your Nepali birthday ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Main birthday website -->
+<div id="mainPage">
+
+    <header>
+
+        <h1>Happy Birthday, Wifeey! 🎂</h1>
+
+        <p>
+            To my beautiful Aakriti Bhagat 💗<br>
+            My favourite person, my sweetest memory,<br>
+            and my forever special girl. 🌷
+        </p>
+
+        <p style="font-size:22px; margin-top:15px;">
+            🎀 💖 🧸 💌 🌸
+        </p>
+
+    </header>
+
+
+    <!-- Photo memories -->
+    <section class="section">
+
+        <h2>Our Little Memories 📸</h2>
+
+        <p class="subtitle">
+            Every picture holds a little piece of my heart.
+        </p>
+
+        <div class="gallery">
+
+            <div class="photo-card">
+                <img src="holdinghand.jpeg"
+                     alt="Hand in hand memory">
+                <p>Hand in Hand 🤝</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="kiss%20memory.jpeg"
+                     alt="Sweet memory">
+                <p>Sweet Memories 💋</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="photo1.jpeg"
+                     alt="My favourite picture">
+                <p>My Favourite Picture 🌸</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="selfie1.jpeg"
+                     alt="Beautiful memory">
+                <p>Beautiful You 💗</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="baby.jpeg"
+                     alt="Another sweet memory">
+                <p>Another Sweet Memory 🧸</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Video memories -->
+    <section class="section">
+
+        <h2>Our Video Memories 🎬</h2>
+
+        <p class="subtitle">
+            Little moments that I want to keep forever.
+        </p>
+
+        <div class="video-gallery">
+
+            <div class="video-card">
+
+                <video controls playsinline preload="metadata">
+                    <source src="bhabhijee1.mp4" type="video/mp4">
+                    Your browser cannot play this video.
+                </video>
+
+                <p>Memory Number One 🌹</p>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls playsinline preload="metadata">
+                    <source src="bhabhijee2.mp4" type="video/mp4">
+                    Your browser cannot play this video.
+                </video>
+
+                <p>Memory Number Two 🧸</p>
+
+            </div>
+
+            <div class="video-card">
+
+                <video controls playsinline preload="metadata">
+                    <source src="bhabhijee3.mp4" type="video/mp4">
+                    Your browser cannot play this video.
+                </video>
+
+                <p>Memory Number Three 💖</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Love letters -->
+    <section class="section">
+
+        <h2>Little Love Letters 💌</h2>
+
+        <div class="letters">
+
+            <div class="letter">
+
+                <h3>My Dear Wifeey 💗</h3>
+
+                Happy birthday, my beautiful girl.
+
+                You make my ordinary days feel special.
+                Your smile is one of my favourite things
+                in this world.
+
+                I hope today brings you all the happiness
+                that you deserve.
+
+                I am so lucky to have you in my life.
+
+                <br><br>
+                Forever your person. ❤️
+
+            </div>
+
+
+            <div class="letter">
+
+                <h3>To My Favourite Person 🌷</h3>
+
+                If I could give you one thing in this world,
+                I would give you the ability to see yourself
+                through my eyes.
+
+                Then you would understand how precious,
+                beautiful, and special you truly are.
+
+                You deserve endless smiles, warm hugs,
+                peaceful days, and beautiful dreams.
+
+                <br><br>
+                Happy birthday, Wifeey! 🎂
+
+            </div>
+
+
+            <div class="letter">
+
+                <h3>A Little Promise 🧸</h3>
+
+                I promise to keep making little memories
+                with you.
+
+                To celebrate your happiness, listen to you,
+                support your dreams, and remind you how
+                special you are.
+
+                No matter how busy life gets,
+                I hope we always find reasons to smile
+                together.
+
+                <br><br>
+                You are my favourite hello. 💕
+
+            </div>
+
+
+            <div class="letter">
+
+                <h3>My Birthday Wish ✨</h3>
+
+                On your special day, I wish you a life
+                filled with love, laughter, success,
+                and beautiful surprises.
+
+                May every dream you hold close
+                slowly become real.
+
+                Keep shining, keep smiling,
+                and keep being your wonderful self.
+
+                <br><br>
+                Happy Birthday, Aakriti! 🎀
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Surprise gifts -->
+    <section class="section">
+
+        <h2>Open Your Little Surprises 🎁</h2>
+
+        <p class="subtitle">
+            There are some cute little gifts waiting for you!
+        </p>
+
+        <div class="surprise-grid">
+
+            <div class="gift">
+
+                <button onclick="openGift(1)">
+                    🎁 Surprise One
+                </button>
+
+                <p id="gift1" class="hidden">
+                    You are my favourite notification. 💌
+                </p>
+
+            </div>
+
+
+            <div class="gift">
+
+                <button onclick="openGift(2)">
+                    🎀 Surprise Two
+                </button>
+
+                <p id="gift2" class="hidden">
+                    Your smile is my favourite view. 🌸
+                </p>
+
+            </div>
+
+
+            <div class="gift">
+
+                <button onclick="openGift(3)">
+                    🧸 Surprise Three
+                </button>
+
+                <p id="gift3" class="hidden">
+                    Sending you a million virtual hugs! 🤗
+                </p>
+
+            </div>
+
+
+            <div class="gift">
+
+                <button onclick="openGift(4)">
+                    💗 Surprise Four
+                </button>
+
+                <p id="gift4" class="hidden">
+                    You are loved more than these words
+                    can ever explain. ❤️
+                </p>
+
+            </div>
+
+
+            <div class="gift">
+
+                <button onclick="openGift(5)">
+                    💌 Surprise Five
+                </button>
+
+                <p id="gift5" class="hidden">
+                    If I had to choose again,
+                    I would still choose you. 💕
+                </p>
+
+            </div>
+
+
+            <div class="gift">
+
+                <button onclick="openGift(6)">
+                    🌷 Final Surprise
+                </button>
+
+                <p id="gift6" class="hidden">
+                    Happy Birthday, Wifeey!
+                    You are my sweetest gift. 🎂
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Final birthday wish -->
+    <section class="section">
+
+        <div class="final-card">
+
+            <h2>One Last Thing, My Wifeey 💖</h2>
+
+            <p>
+                Happy Birthday, Aakriti Bhagat! 🎂<br><br>
+
+                November 29 will always be a special day
+                because it is the day my favourite girl
+                came into this world. 🌷<br><br>
+
+                Thank you for being you.<br>
+
+                Thank you for all the little memories.<br>
+
+                Thank you for making life sweeter. 💗<br><br>
+
+                I hope this little website makes you smile
+                as much as you make me smile.<br><br>
+
+                With lots and lots of love,<br>
+
+                Your favourite person. ❤️
+            </p>
+
+            <button class="main-btn" onclick="celebrate()">
+                Send Birthday Hugs 🤗
+            </button>
+
+            <p id="hugMessage" style="margin-top:20px;"></p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        Made with endless love for Aakriti Bhagat 💗<br>
+
+        Happy Birthday, My Wifeey 🎂
+
+    </footer>
+
+</div>
+
+
+<script>
+
+/* Birthday password */
+
+function unlockWebsite() {
+
+    const password =
+        document.getElementById("password").value.trim();
+
+    if (password === "08/13") {
+
+        document.getElementById("loginPage").style.display = "none";
+
+        document.getElementById("mainPage").style.display = "block";
+
+        document.getElementById("error").innerText = "";
+
+        window.scrollTo(0, 0);
+
+    } else {
+
+        document.getElementById("error").innerText =
+            "Oops! Try your Nepali birthday again, Wifeey 💗";
+
+    }
+
+}
+
+
+/* Enter key support */
+
+document.getElementById("password").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            unlockWebsite();
+        }
+
+    }
+);
+
+
+/* Surprise gifts */
+
+function openGift(number) {
+
+    const gift = document.getElementById("gift" + number);
+
+    gift.classList.toggle("hidden");
+
+}
+
+
+/* Birthday hugs */
+
+function celebrate() {
+
+    document.getElementById("hugMessage").innerHTML =
+        "Sending you the biggest virtual hug ever! 🤗💗🎀";
+
+    createHearts(30);
+
+}
+
+
+/* Floating hearts */
+
+function createHearts(amount) {
+
+    const container = document.getElementById("hearts");
+
+    const emojis = ["💗", "💕", "💖", "🌸", "💘", "🎀"];
+
+    for (let i = 0; i < amount; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+
+        container.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 10000);
+
+    }
+
+}
+
+
+/* Automatically create floating hearts */
+
+setInterval(function() {
+
+    createHearts(2);
+
+}, 1500);
+
+</script>
+
+</body>
+</html>
